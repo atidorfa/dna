@@ -43,3 +43,21 @@ def transcription(dna):
 def reverse_complement(dna):
     '''Swap Adenine with Thymine and Guanine with Cytosine. Reversing newly generated string'''
     return ''.join([dna_reversecomplement[nuc] for nuc in dna])[::-1]
+
+    #  # python approach. faster solution
+    # mapping = str.maketrans('ATCG', 'TAGC')
+    # return dna.translate(mapping)[::-1]
+
+
+def gc_content(dna):
+    '''GC Cotent in DNA/RNA sequences'''
+    return round((dna.count('C') + dna.count('G')) / len(dna) * 100)
+
+
+def gc_content_subdna(dna, k=20):
+    '''GC Cotent in DNA/RNA sub-sequence lenght k. k=20 by default'''
+    res = []
+    for i in range(0, len(dna) - k + 1, k):
+        subdna = dna[i:i + k]
+        res.append(gc_content(subdna))
+    return res
