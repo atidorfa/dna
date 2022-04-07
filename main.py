@@ -24,3 +24,7 @@ print("\n")
 print(f"[5] + GC Content: {gc_content(dna)}%")
 print(f"[6] + GC Content in Subsection k=5: {gc_content_subdna(dna, k=5)}")
 print("\n")
+
+print(f"[7] + Aminoacids Sequence from DNA: {translate_dna(dna, 0)}")
+print(f"[8] + Codon Frequency (L): {codon_usage(dna, 'L')}")
+print("\n")
